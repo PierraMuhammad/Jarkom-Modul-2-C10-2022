@@ -595,7 +595,7 @@ Listen 15500' >> /etc/apache2/ports.conf
 <VirtualHost *:15000 *:15500>
 ```
 
-![14](/screenshot/14.png)
+![14](/screenshot/14.PNG)
 
 ## Soal 15
 
@@ -607,7 +607,7 @@ Listen 15500' >> /etc/apache2/ports.conf
 htpasswd -b -c /etc/apache2/.htpasswd Twilight opStrix
 ```
 
-![15](/screenshot/15.png)
+![15](/screenshot/15.PNG)
 
 ## Soal 16
 
@@ -619,17 +619,17 @@ htpasswd -b -c /etc/apache2/.htpasswd Twilight opStrix
 RedirectMatch 301 ^/$ http://www.wise.c10.com
 ```
 
-![16](/screenshot/16.png)
+![16](/screenshot/16.PNG)
 
 ## Soal 17
 
 > Karena website `www.eden.wise.yyy.com` semakin banyak pengunjung dan banyak modifikasi sehingga banyak gambar-gambar yang random, maka Loid ingin mengubah request gambar yang memiliki substring “eden” akan diarahkan menuju eden.png. Bantulah Agent Twilight dan Organisasi WISE menjaga perdamaian!
 
 - Masukan file eden.png ke eden
-- masukan aturan baru terkait
+- masukan aturan baru, jika terdapat substring eden maka akan disalurkan ke eden.png
 
 ```
-
+RewriteRule ^public\/images\/(?!eden\.png).*eden.*$ /public/images/eden.png
 ```
 
-![17](/screenshot/17.png)
+![17](/screenshot/17.PNG)
